@@ -1,0 +1,72 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Especial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .heart {
+            animation: heartBeat 1s infinite;
+            color: #ff4444;
+        }
+        .response-button {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .response-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-pink-100 to-pink-200 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-2xl rounded-xl p-10 max-w-2xl w-full m-4 border-4 border-pink-200">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-pink-600">Invitación Especial</h1>
+        </div>
+        
+        <div class="prose prose-lg text-gray-800 text-center">
+            <p class="mb-4 font-semibold">Hola mi niña,</p>
+            
+            <p class="mb-4">
+                Te escribo esta carta para hacerte una invitación especial, me gustas demasiado, 
+                me haces sentir muy amado y muy feliz. Sos una chica tan hermosa y tan noble, 
+                y por esas mismas razones me gustaría preguntarte:
+            </p>
+            
+            <p class="text-2xl font-bold text-pink-600 mb-4">
+                ¿Querés ser mi San Valentín? <span class="heart">❤️</span>
+            </p>
+        </div>
+        
+        <div class="flex justify-center space-x-4 mt-6">
+            <button onclick="handleResponse(true)" class="response-button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">
+                Sí ❤️
+            </button>
+            <button onclick="handleResponse(false)" class="response-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">
+                No 💔
+            </button>
+        </div>
+        
+        <div id="response-message" class="text-center mt-4 text-xl font-bold"></div>
+
+        <script>
+            function handleResponse(response) {
+                const messageEl = document.getElementById('response-message');
+                if (response) {
+                    messageEl.innerHTML = "¡Gracias por ser mi San Valentín! 💕";
+                    messageEl.style.color = "#FF1493";
+                } else {
+                    messageEl.innerHTML = "Entiendo... Gracias por ser honesta.";
+                    messageEl.style.color = "#888";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
+```
